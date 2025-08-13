@@ -5,7 +5,6 @@ class ThemeManager {
     }
     
     init() {
-        // Check for saved theme or default to system preference
         const savedTheme = localStorage.getItem('theme');
         const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
         
@@ -13,13 +12,11 @@ class ThemeManager {
             this.setDarkMode(true);
         }
         
-        // Bind theme toggle
         const themeToggle = document.getElementById('theme-toggle');
         if (themeToggle) {
             themeToggle.addEventListener('click', () => this.toggleTheme());
         }
         
-        // Listen for system theme changes
         window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
             if (!localStorage.getItem('theme')) {
                 this.setDarkMode(e.matches);
@@ -36,7 +33,6 @@ class ThemeManager {
         document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
         localStorage.setItem('theme', isDark ? 'dark' : 'light');
         
-        // Update theme toggle icon
         const themeToggle = document.getElementById('theme-toggle');
         if (themeToggle) {
             const icon = themeToggle.querySelector('i');
@@ -52,7 +48,6 @@ class NavigationManager {
     }
     
     init() {
-        // Mobile menu toggle
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         
@@ -64,7 +59,6 @@ class NavigationManager {
             });
         }
         
-        // Close mobile menu when clicking on links
         const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
         mobileNavLinks.forEach(link => {
             link.addEventListener('click', () => {
@@ -74,7 +68,6 @@ class NavigationManager {
             });
         });
         
-        // Smooth scrolling for navigation links
         const navLinks = document.querySelectorAll('.nav-link, .mobile-nav-link');
         navLinks.forEach(link => {
             link.addEventListener('click', (e) => {
@@ -84,7 +77,6 @@ class NavigationManager {
             });
         });
         
-        // Navbar background on scroll
         window.addEventListener('scroll', () => {
             const navbar = document.querySelector('.navbar');
             if (window.scrollY > 50) {
@@ -102,7 +94,7 @@ class NavigationManager {
     scrollToSection(sectionId) {
         const element = document.getElementById(sectionId);
         if (element) {
-            const offsetTop = element.offsetTop - 80; // Account for fixed navbar
+            const offsetTop = element.offsetTop - 80;
             window.scrollTo({
                 top: offsetTop,
                 behavior: 'smooth'
@@ -118,7 +110,6 @@ class AnimationManager {
     }
     
     init() {
-        // Intersection Observer for fade-in animations
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
@@ -132,16 +123,12 @@ class AnimationManager {
             });
         }, observerOptions);
         
-        // Observe elements for animation
         const animatedElements = document.querySelectorAll(
             '.skill-card, .project-card, .testimonial-card, .experience-item'
         );
         
-        animatedElements.forEach(el => {
-            observer.observe(el);
-        });
+        animatedElements.forEach(el => observer.observe(el));
         
-        // Skill bar animations
         this.animateSkillBars();
     }
     
@@ -176,19 +163,16 @@ function scrollToSection(sectionId) {
     }
 }
 
-// Contact Form Handler (if you add a contact form later)
+// Contact Form Handler
 class ContactManager {
     constructor() {
         this.init();
     }
     
     init() {
-        // Add any contact form handling here
-        // For now, just handle mailto links
         const emailLinks = document.querySelectorAll('a[href^="mailto:"]');
         emailLinks.forEach(link => {
-            link.addEventListener('click', (e) => {
-                // You can add analytics tracking here
+            link.addEventListener('click', () => {
                 console.log('Email link clicked');
             });
         });
@@ -202,10 +186,7 @@ class PerformanceManager {
     }
     
     init() {
-        // Lazy load images
         this.lazyLoadImages();
-        
-        // Debounce scroll events
         this.debounceScrollEvents();
     }
     
@@ -229,7 +210,6 @@ class PerformanceManager {
         let ticking = false;
         
         function updateScrollEffects() {
-            // Add any scroll-based effects here
             ticking = false;
         }
         
@@ -244,7 +224,7 @@ class PerformanceManager {
     }
 }
 
-// Initialize everything when DOM is loaded
+// Initialize everything
 document.addEventListener('DOMContentLoaded', () => {
     new ThemeManager();
     new NavigationManager();
@@ -252,21 +232,17 @@ document.addEventListener('DOMContentLoaded', () => {
     new ContactManager();
     new PerformanceManager();
     
-    // Add loading class removal
     document.body.classList.add('loaded');
     
-    // Console message for developers
-    console.log('🚀 Benard Boiwo Portfolio loaded successfully!');
-    console.log('💼 Interested in the code? Check out the GitHub repository!');
+    console.log('🚀 Portfolio loaded successfully!');
+    console.log('💼 Check out the GitHub repository!');
 });
 
-// Handle page visibility changes for performance
+// Handle visibility changes
 document.addEventListener('visibilitychange', () => {
     if (document.hidden) {
-        // Pause any heavy animations when page is not visible
         console.log('Page hidden - optimizing performance');
     } else {
-        // Resume animations when page becomes visible
         console.log('Page visible - resuming normal operation');
     }
 });
@@ -274,15 +250,14 @@ document.addEventListener('visibilitychange', () => {
 // Error handling
 window.addEventListener('error', (e) => {
     console.error('Portfolio error:', e.error);
-    // You can add error reporting here
 });
 
-// Service Worker registration (for PWA features if needed)
+// Service Worker registration (optional PWA)
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
-        // Uncomment if you add a service worker
+        // Uncomment to enable service worker
         // navigator.serviceWorker.register('/sw.js')
-        //     .then(registration => console.log('SW registered'))
-        //     .catch(error => console.log('SW registration failed'));
+        //     .then(() => console.log('SW registered'))
+        //     .catch(() => console.log('SW registration failed'));
     });
 }
