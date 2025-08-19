@@ -163,6 +163,86 @@ function scrollToSection(sectionId) {
     }
 }
 
+// Project Card Functionalities
+function openProjectModal(event) {
+    event.stopPropagation();
+    const card = event.target.closest('.project-card');
+    if (!card) return;
+    document.getElementById('modal-title').textContent = card.dataset.title;
+    document.getElementById('modal-description').textContent = card.dataset.description;
+    document.getElementById('modal-links').innerHTML = `
+        <a href="${card.dataset.github}" target="_blank" class="project-link"><i class="fab fa-github"></i> Code</a>
+        <a href="${card.dataset.demo}" target="_blank" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+    `;
+    document.getElementById('project-modal').style.display = 'block';
+}
+
+// Make project card clickable to open demo
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.project-card').forEach(card => {
+        card.addEventListener('click', function(e) {
+            // Prevent if clicking on action buttons or links
+            if (
+                e.target.closest('.project-action-btn') ||
+                e.target.closest('a')
+            ) return;
+            const demo = card.dataset.demo;
+            if (demo) {
+                window.open(demo, '_blank');
+            }
+        });
+    });
+});
+
+function closeProjectModal() {
+    document.getElementById('project-modal').style.display = 'none';
+}
+
+function copyProjectLink(event) {
+    event.stopPropagation();
+    const card = event.target.closest('.project-card');
+    if (!card) return;
+    const link = card.dataset.demo;
+    if (navigator.clipboard) {
+        navigator.clipboard.writeText(link).then(() => {
+            alert('Project link copied to clipboard!');
+        });
+    } else {
+        // fallback
+        const temp = document.createElement('input');
+        document.body.appendChild(temp);
+        temp.value = link;
+        temp.select();
+        document.execCommand('copy');
+        document.body.removeChild(temp);
+        alert('Project link copied to clipboard!');
+    }
+}
+
+function shareProject(event) {
+    event.stopPropagation();
+    const card = event.target.closest('.project-card');
+    if (!card) return;
+    const shareData = {
+        title: card.dataset.title,
+        text: card.dataset.description,
+        url: card.dataset.demo
+    };
+    if (navigator.share) {
+        navigator.share(shareData).catch(() => {});
+    } else {
+        alert('Sharing is not supported in this browser.');
+    }
+}
+
+// Close modal on outside click
+window.addEventListener('click', function(e) {
+    const modal = document.getElementById('project-modal');
+    if (modal && modal.style.display === 'block' && !modal.contains(e.target) && !e.target.closest('.project-card')) {
+        closeProjectModal();
+    }
+});
+
 // Contact Form Handler
 class ContactManager {
     constructor() {
