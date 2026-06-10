@@ -3,395 +3,455 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Benard Boiwo - Professional Developer Portfolio</title>
+    <title>Boiwo Benard - Software Developer</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    
-    <canvas id="particles-canvas"></canvas>
+    <!-- Header Navigation -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <div class="nav__data">
+                <a href="#" class="nav__logo">
+                    <span>Boiwo Benard</span>
+                    <small>Software Developer</small>
+                </a>
 
-
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-brand">Boiwo Benard</div>
-            
-            
-            <div class="nav-menu">
-                <a href="#about" class="nav-link">About</a>
-                <a href="#skills" class="nav-link">Skills</a>
-                <a href="#experience" class="nav-link">Experience</a>
-                <a href="#projects" class="nav-link">Projects</a>
-                <a href="#contact" class="nav-link">Contact</a>
-            </div>
-
-            <div class="nav-controls">
-                <button id="theme-toggle" class="theme-toggle" aria-pressed="false" title="Toggle theme">
-                    <i class="fas fa-moon"></i>
-                </button>
-                
-                <!-- Mobile Menu Button -->
-                <button id="mobile-menu-btn" class="mobile-menu-btn" aria-controls="mobile-menu" aria-expanded="false" title="Toggle navigation">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </div>
-
-            <!-- Mobile Navigation -->
-            <div id="mobile-menu" class="mobile-menu">
-                <a href="#about" class="mobile-nav-link">About</a>
-                <a href="#skills" class="mobile-nav-link">Skills</a>
-                <a href="#experience" class="mobile-nav-link">Experience</a>
-                <a href="#projects" class="mobile-nav-link">Projects</a>
-                <a href="#contact" class="mobile-nav-link">Contact</a>
-            </div>
-        </div>
-    
-    <section class="hero">
-        <div class="hero-container">
-            <div class="hero-content">
-                <img src="https://media.licdn.com/dms/image/v2/D4D03AQFh0IBub5fJSQ/profile-displayphoto-scale_400_400/B4DZyWviV5G8Ag-/0/1772055583662?e=1777507200&v=beta&t=2fqSHc8Ui8te1fWg0xaPA74qQiyFzyZTPS_CbmsZUHE" 
-                     alt="Boiwo Benard" class="hero-image">
-                <h1 class="hero-title">
-                    Hi, I'm <span class="gradient-text">Boiwo Benard</span>
-                </h1>
-                <p class="hero-description">
-                    A passionate Software Developer crafting digital solutions with Python Flask, React, and modern web technologies. 
-                    Turning ideas into elegant, functional applications.
-                </p>
-                <div class="hero-buttons">
-                    <button class="btn btn-primary" onclick="scrollToSection('projects')">View My Work</button>
-                    <button class="btn btn-secondary" onclick="scrollToSection('contact')">Get In Touch</button>
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="fas fa-bars nav__burger"></i>
+                    <i class="fas fa-times nav__close"></i>
                 </div>
             </div>
-        </div>
-    </section>
 
-    
-    <section id="about" class="section section-alt">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <p>
-                    I'm a dedicated Software Developer with 1 year of hands-on experience in creating robust web applications. 
-                    My journey in software development has been driven by a passion for problem-solving and a commitment to 
-                    writing clean, efficient code.
-                </p>
-                <p>
-                    My expertise spans across full-stack development, with a strong foundation in Python's Flask framework 
-                    for backend development and React for creating dynamic, user-friendly frontends. I believe in the power 
-                    of technology to transform ideas into reality and am always eager to learn new technologies and take on 
-                    challenging projects.
-                </p>
-                <p>
-                    When I'm not coding, I enjoy staying up-to-date with the latest tech trends, contributing to open-source 
-                    projects, and mentoring aspiring developers in my community.
-                </p>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="#home" class="nav__link">Home</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#about" class="nav__link">About</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#skills" class="nav__link">Skills</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#projects" class="nav__link">Projects</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#contact" class="nav__link">Contact</a>
+                    </li>
+                </ul>
             </div>
-        </div>
-    </section>
-    <section id="skills" class="section">
-        <div class="container">
-            <h2 class="section-title">Skills & Technologies</h2>
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <div class="skill-header">
-                        <i class="fas fa-code skill-icon"></i>
-                        <h3>Backend Development</h3>
-                    </div>
-                    <div class="skill-items">
-                        <div class="skill-item">
-                            <span>Python Flask</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 85%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <span>RESTful APIs</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 80%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        </nav>
+    </header>
 
-                <div class="skill-card">
-                    <div class="skill-header">
-                        <i class="fas fa-globe skill-icon skill-icon-green"></i>
-                        <h3>Frontend Development</h3>
+    <main class="main">
+        <!-- Hero Section -->
+        <section class="hero section" id="home">
+            <div class="hero__container container">
+                <div class="hero__content">
+                    <div class="hero__profile">
+                        <img src=" https://media.licdn.com/dms/image/v2/D4D03AQFuz_dufrN75Q/profile-displayphoto-scale_400_400/B4DZ6ym0MuHgAg-/0/1781112982105?e=1782950400&v=beta&t=IS5j78hVuPqzX-hcAjyarSmUPLofT2qFJNquuIQsqYY" alt="Boiwo Benard" class="hero__image">
                     </div>
-                    <div class="skill-items">
-                        <div class="skill-item">
-                            <span>React.js</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress skill-progress-green" style="width: 85%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <span>JavaScript</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress skill-progress-green" style="width: 90%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <span>HTML/CSS</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress skill-progress-green" style="width: 95%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="skill-card">
-                    <div class="skill-header">
-                        <i class="fas fa-mobile-alt skill-icon skill-icon-purple"></i>
-                        <h3>UI Frameworks</h3>
-                    </div>
-                    <div class="skill-items">
-                        <div class="skill-item">
-                            <span>Bootstrap</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress skill-progress-purple" style="width: 85%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <span>Tailwind CSS</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress skill-progress-purple" style="width: 75%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    
-    <section id="experience" class="section section-alt">
-        <div class="container">
-            <h2 class="section-title">Experience</h2>
-            <div class="experience-timeline">
-                <div class="timeline-line"></div>
-                <div class="experience-item">
-                    <div class="experience-icon">
-                        <i class="fas fa-calendar-alt"></i>
-                    </div>
-                    <div class="experience-content">
-                        <h3>Software Developer</h3>
-                        <p class="experience-duration">1 Year Experience</p>
-                        <p class="experience-description">
-                            Developed and maintained web applications using Python Flask and JavaScript. 
-                            Collaborated with cross-functional teams to deliver high-quality software solutions. 
-                            Implemented responsive designs and optimized application performance.
+                    <div class="hero__info">
+                        <h1 class="hero__title">
+                             Hello I'm Boiwo Benard
+                        </h1>
+                        <h2 class="hero__subtitle">Full Stack Software</h2>
+                        <p class="hero__description">
+                            Passionate about creating innovative web solutions and bringing ideas to life through clean, efficient code. 
+                            Experienced in modern web technologies with a focus on user experience and performance.
                         </p>
-                        <div class="experience-tags">
-                            <span class="tag tag-blue">Flask</span>
-                            <span class="tag tag-green">React.js</span>
-                            <span class="tag tag-purple">JavaScript</span>
-                            <span class="tag tag-orange">Bootstrap</span>
+                        <button class="hero__button btn" data-scroll="skills">
+                            <i class="fas fa-code"></i>
+                            View My Skills
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="hero__scroll">
+                <div class="hero__scroll-text">Scroll Down</div>
+                <div class="hero__scroll-arrow">
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about section" id="about">
+            <div class="about__container container">
+                <div class="section__header">
+                    <h2 class="section__title">About Me</h2>
+                    <p class="section__subtitle">Get to know more about my journey</p>
+                </div>
+
+                <div class="about__content">
+                    <div class="about__info">
+                        <h3 class="about__title">Biography</h3>
+                        <p class="about__text">
+                            I'm a dedicated software developer with over 2 years of experience in building 
+                            web applications and solving complex technical challenges. 
+                        </p>
+                        
+                        <div class="about__details">
+                            <div class="about__detail">
+                                <h4 class="about__detail-title">
+                                    <i class="fas fa-graduation-cap"></i>
+                                    Education
+                                </h4>
+                                <p class="about__detail-text">
+                                    Certification in Software Engineering<br>
+                                    Moringa School, 2024
+                                </p>
+                            </div>
+
+                            <div class="about__detail">
+                                <h4 class="about__detail-title">
+                                    <i class="fas fa-briefcase"></i>
+                                    Career Highlights
+                                </h4>
+                                <ul class="about__list">
+                                    <li>Led development of 3 major web applications</li>
+                                    <li>Improved system performance by 40% through optimization</li>
+                                    <li>Mentored 10+ junior developers</li>
+                                    <li>Published 2 technical articles on modern web development</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <button class="about__button btn" data-scroll="projects">
+                            <i class="fas fa-folder-open"></i>
+                            See My Projects
+                        </button>
+                    </div>
+
+                    <div class="about__stats">
+                        <div class="about__stat">
+                            <h3 class="about__stat-number">30+</h3>
+                            <p class="about__stat-text">Projects Completed</p>
+                        </div>
+                        <div class="about__stat">
+                            <h3 class="about__stat-number">2+</h3>
+                            <p class="about__stat-text">Years Experience</p>
+                        </div>
+                        <div class="about__stat">
+                            <h3 class="about__stat-number">10+</h3>
+                            <p class="about__stat-text">Happy Clients</p>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-<section id="projects" class="section">
-    <div class="container">
-        <h2 class="section-title">Featured Projects</h2>
-        <div class="projects-grid">
-
-           
-<div class="project-card" 
-     data-title="Bookly — Hotel & Travel Booking System" 
-     data-description="A comprehensive hotel and travel booking system with user authentication, booking management, and payment integration." 
-     data-github="https://github.com/boiwo/Bookly---Hotel-Travel-Booking-System" 
-     data-demo="https://bookly-hotel-travel-booking-system.vercel.app/">
-    <div class="project-image project-image-blue">
-        <i class="fas fa-hotel"></i>
-    </div>
-    <div class="project-content">
-        <h3>Bookly — Hotel & Travel Booking System</h3>
-        <p>A comprehensive hotel and travel booking system with user authentication, booking management, and payment integration.</p>
-        <div class="project-tags">
-            <span class="tag tag-blue">Flask</span>
-            <span class="tag tag-green">React</span>
-            <span class="tag tag-purple">JavaScript</span>
-        </div>
-        <div class="project-links">
-            <button class="project-action-btn" title="Live Demo" onclick="openDemo(event)">
-                <i class="fas fa-external-link-alt"></i> Live Demo
-            </button>
-            <button class="project-action-btn" title="More Info" onclick="openProjectModal(event)">
-                <i class="fas fa-info-circle"></i>
-            </button>
-            <button class="project-action-btn" title="Copy Link" onclick="copyProjectLink(event)">
-                <i class="fas fa-link"></i>
-            </button>
-        </div>
-    </div>
-</div>
-
-
-<div class="project-card" 
-     data-title="Afya-Link-care" 
-     data-description="A healthcare platform connecting patients with medical professionals, appointments, and health records management." 
-     data-github="https://github.com/boiwo/Afya-Link-care" 
-     data-demo="https://afya-link-care-xcg8.vercel.app/">
-    <div class="project-image project-image-green">
-        <i class="fas fa-notes-medical"></i>
-    </div>
-    <div class="project-content">
-        <h3>Afya-Link-care</h3>
-        <p>A healthcare platform connecting patients with medical professionals, appointments, and health records management.</p>
-        <div class="project-tags">
-            <span class="tag tag-blue">Flask</span>
-            <span class="tag tag-orange">Bootstrap</span>
-            <span class="tag tag-purple">React</span>
-        </div>
-        <div class="project-links">
-            <button class="project-action-btn" title="Live Demo" onclick="openDemo(event)">
-                <i class="fas fa-external-link-alt"></i> Live Demo
-            </button>
-            <button class="project-action-btn" title="More Info" onclick="openProjectModal(event)">
-                <i class="fas fa-info-circle"></i>
-            </button>
-            <button class="project-action-btn" title="Copy Link" onclick="copyProjectLink(event)">
-                <i class="fas fa-link"></i>
-            </button>
-        </div>
-    </div>
-</div>
-
-
-<div class="project-card" 
-     data-title="Nairobi-Booking" 
-     data-description="An online booking platform for Nairobi-based services, including reservations, event scheduling, and user notifications." 
-     data-github="https://github.com/boiwo/Nairobi-Booking" 
-     data-demo="https://nairobi-booking.vercel.app/">
-    <div class="project-image project-image-purple">
-        <i class="fas fa-city"></i>
-    </div>
-    <div class="project-content">
-        <h3>Nairobi-Booking</h3>
-        <p>An online booking platform for Nairobi-based services, including reservations, event scheduling, and user notifications.</p>
-        <div class="project-tags">
-            <span class="tag tag-green">React</span>
-            <span class="tag tag-blue">Flask API</span>
-            <span class="tag tag-gray">JavaScript</span>
-        </div>
-        <div class="project-links">
-            <button class="project-action-btn" title="Live Demo" onclick="openDemo(event)">
-                <i class="fas fa-external-link-alt"></i> Live Demo
-            </button>
-            <button class="project-action-btn" title="More Info" onclick="openProjectModal(event)">
-                <i class="fas fa-info-circle"></i>
-            </button>
-            <button class="project-action-btn" title="Copy Link" onclick="copyProjectLink(event)">
-                <i class="fas fa-link"></i>
-            </button>
-        </div>
-    </div>
-</div>
-
-
-            <!-- Project Modal -->
-            <div id="project-modal" class="project-modal" style="display:none;">
-                <div class="project-modal-content">
-                    <span class="project-modal-close" onclick="closeProjectModal()">&times;</span>
-                    <h2 id="modal-title"></h2>
-                    <p id="modal-description"></p>
-                    <div id="modal-links" style="margin-top:1rem;"></div>
+        <!-- Skills Section -->
+        <section class="skills section" id="skills">
+            <div class="skills__container container">
+                <div class="section__header">
+                    <h2 class="section__title">My Skills</h2>
+                    <p class="section__subtitle">Technologies I work with</p>
                 </div>
-            </div>
 
-        </div>
-    </div>
-</section>
-    
+                <div class="skills__content">
+                    <div class="skills__group">
+                        <h3 class="skills__group-title">Frontend Development</h3>
+                        <div class="skills__list">
+                            <div class="skill">
+                                <div class="skill__header">
+                                    <span class="skill__name">HTML/CSS</span>
+                                    <span class="skill__percentage">95%</span>
+                                </div>
+                                <div class="skill__bar">
+                                    <div class="skill__progress" data-width="95"></div>
+                                </div>
+                            </div>
 
-    <!-- Testimonials Section -->
-    <section class="section section-alt">
-        <div class="container">
-            <h2 class="section-title">What People Say</h2>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="testimonial-rating">
-                        <i class="fas fa-award"></i>
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
+                            <div class="skill">
+                                <div class="skill__header">
+                                    <span class="skill__name">JavaScript</span>
+                                    <span class="skill__percentage">90%</span>
+                                </div>
+                                <div class="skill__bar">
+                                    <div class="skill__progress" data-width="90"></div>
+                                </div>
+                            </div>
+
+                            <div class="skill">
+                                <div class="skill__header">
+                                    <span class="skill__name">React</span>
+                                    <span class="skill__percentage">85%</span>
+                                </div>
+                                <div class="skill__bar">
+                                    <div class="skill__progress" data-width="85"></div>
+                                </div>
+                            </div>
+
+                            <div class="skill">
+                                <div class="skill__header">
+                                    <span class="skill__name">Vue.js</span>
+                                    <span class="skill__percentage">80%</span>
+                                </div>
+                                <div class="skill__bar">
+                                    <div class="skill__progress" data-width="80"></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <p class="testimonial-text">
-                        "Benard delivered exceptional work on our web application. His attention to detail and 
-                        technical expertise made the project a great success. Highly recommended!"
-                    </p>
-                    <div class="testimonial-author">
-                        <p class="author-name">Sarah Johnson</p>
-                        <p class="author-title">Project Manager, Tech Solutions Inc.</p>
-                    </div>
-                </div>
-                
-                <div class="testimonial-card">
-                    <div class="testimonial-rating">
-                        <i class="fas fa-award"></i>
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
+
+                    <div class="skills__group">
+                        <h3 class="skills__group-title">Backend Development</h3>
+                        <div class="skills__list">
+                            <div class="skill">
+                                <div class="skill__header">
+                                    <span class="skill__name">Node.js</span>
+                                    <span class="skill__percentage">88%</span>
+                                </div>
+                                <div class="skill__bar">
+                                    <div class="skill__progress" data-width="88"></div>
+                                </div>
+                            </div>
+
+                            <div class="skill">
+                                <div class="skill__header">
+                                    <span class="skill__name">Python</span>
+                                    <span class="skill__percentage">82%</span>
+                                </div>
+                                <div class="skill__bar">
+                                    <div class="skill__progress" data-width="82"></div>
+                                </div>
+                            </div>
+
+                            <div class="skill">
+                                <div class="skill__header">
+                                    <span class="skill__name">Database (SQL/NoSQL)</span>
+                                    <span class="skill__percentage">85%</span>
+                                </div>
+                                <div class="skill__bar">
+                                    <div class="skill__progress" data-width="85"></div>
+                                </div>
+                            </div>
+
+                            <div class="skill">
+                                <div class="skill__header">
+                                    <span class="skill__name">API Development</span>
+                                    <span class="skill__percentage">87%</span>
+                                </div>
+                                <div class="skill__bar">
+                                    <div class="skill__progress" data-width="87"></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <p class="testimonial-text">
-                        "Working with Benard was a pleasure. He's professional, communicative, and delivers 
-                        clean, efficient code. Looking forward to future collaborations!"
-                    </p>
-                    <div class="testimonial-author">
-                        <p class="author-name">Michael Chen</p>
-                        <p class="author-title">Lead Developer, StartupXYZ</p>
-                    </div>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="section">
-        <div class="container">
-            <h2 class="section-title">Let's Work Together</h2>
-            <div class="contact-content">
-                <p class="contact-description">
-                    I'm always interested in new opportunities and exciting projects. 
-                    Let's discuss how we can bring your ideas to life!
-                </p>
-                <div class="contact-buttons">
-                    <a href="mailto:benard.boiwo95@gmail.com" class="btn btn-primary">
-                        <i class="fas fa-envelope"></i> Email Me
-                    </a>
-                    <a href="https://github.com/boiwo" target="_blank" class="btn btn-secondary" rel="noreferrer noopener">
-                        <i class="fab fa-github"></i> GitHub
-                    </a>
-                    <a href="https://linkedin.com/in/Boiwo%20Benard" target="_blank" class="btn btn-secondary" rel="noreferrer noopener">
-                        <i class="fab fa-linkedin"></i> LinkedIn
-                    </a>
+                <div class="skills__action">
+                    <button class="skills__button btn" data-scroll="projects">
+                        <i class="fas fa-rocket"></i>
+                        See My Work
+                    </button>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="projects section" id="projects">
+            <div class="projects__container container">
+                <div class="section__header">
+                    <h2 class="section__title">My Projects</h2>
+                    <p class="section__subtitle">Some of my recent work</p>
+                </div>
+
+                <div class="projects__grid">
+                    <article class="project">
+                        <div class="project__image">
+                            <img src="https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg?auto=compress&cs=tinysrgb&w=600" alt="E-Commerce Platform">
+                            <div class="project__overlay">
+                                <div class="project__links">
+                                    <a href="#" class="project__link" target="_blank">
+                                        <i class="fas fa-external-link-alt"></i>
+                                        Live Demo
+                                    </a>
+                                    <a href="#" class="project__link" target="_blank">
+                                        <i class="fab fa-github"></i>
+                                        GitHub
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project__content">
+                            <h3 class="project__title">E-Commerce Platform</h3>
+                            <p class="project__description">
+                                A full-stack e-commerce solution built with React and Node.js. Features include 
+                                user authentication, shopping cart, payment integration, and admin dashboard.
+                            </p>
+                            <div class="project__technologies">
+                                <span class="project__tech">React</span>
+                                <span class="project__tech">Node.js</span>
+                                <span class="project__tech">MongoDB</span>
+                                <span class="project__tech">Stripe API</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project">
+                        <div class="project__image">
+                            <img src="https://images.pexels.com/photos/590020/pexels-photo-590020.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Task Management App">
+                            <div class="project__overlay">
+                                <div class="project__links">
+                                    <a href="#" class="project__link" target="_blank">
+                                        <i class="fas fa-external-link-alt"></i>
+                                        Live Demo
+                                    </a>
+                                    <a href="#" class="project__link" target="_blank">
+                                        <i class="fab fa-github"></i>
+                                        GitHub
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project__content">
+                            <h3 class="project__title">Task Management App</h3>
+                            <p class="project__description">
+                                A collaborative task management application with real-time updates, drag-and-drop 
+                                functionality, and team collaboration features. Built with Vue.js and Firebase.
+                            </p>
+                            <div class="project__technologies">
+                                <span class="project__tech">Vue.js</span>
+                                <span class="project__tech">Firebase</span>
+                                <span class="project__tech">Vuex</span>
+                                <span class="project__tech">Socket.io</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project">
+                        <div class="project__image">
+                            <img src="https://images.pexels.com/photos/669996/pexels-photo-669996.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Weather Dashboard">
+                            <div class="project__overlay">
+                                <div class="project__links">
+                                    <a href="#" class="project__link" target="_blank">
+                                        <i class="fas fa-external-link-alt"></i>
+                                        Live Demo
+                                    </a>
+                                    <a href="#" class="project__link" target="_blank">
+                                        <i class="fab fa-github"></i>
+                                        GitHub
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project__content">
+                            <h3 class="project__title">Weather Dashboard</h3>
+                            <p class="project__description">
+                                An interactive weather dashboard with location-based forecasts, weather maps, 
+                                and historical data visualization. Features responsive design and PWA capabilities.
+                            </p>
+                            <div class="project__technologies">
+                                <span class="project__tech">JavaScript</span>
+                                <span class="project__tech">Chart.js</span>
+                                <span class="project__tech">Weather API</span>
+                                <span class="project__tech">PWA</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact section" id="contact">
+            <div class="contact__container container">
+                <div class="section__header">
+                    <h2 class="section__title">Get In Touch</h2>
+                    <p class="section__subtitle">Let's discuss your next project</p>
+                </div>
+
+                <div class="contact__content">
+                    <div class="contact__info">
+                        <h3 class="contact__info-title">Let's work together!</h3>
+                        <p class="contact__info-text">
+                            I'm always interested in new opportunities and exciting projects. 
+                            Whether you have a question or just want to say hello, I'd love to hear from you.
+                        </p>
+
+                        <div class="contact__social">
+                            <h4 class="contact__social-title">Connect with me</h4>
+                            <div class="contact__social-links">
+                                <a href="https://linkedin.com/in/liliancherono" class="contact__social-link" target="_blank">
+                                    <i class="fab fa-linkedin"></i>
+                                    <span>LinkedIn</span>
+                                </a>
+                                <a href="https://wa.me/1234567890" class="contact__social-link" target="_blank">
+                                    <i class="fab fa-whatsapp"></i>
+                                    <span>WhatsApp</span>
+                                </a>
+                                <a href="https://facebook.com/liliancherono" class="contact__social-link" target="_blank">
+                                    <i class="fab fa-facebook"></i>
+                                    <span>Facebook</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <form class="contact__form" id="contact-form">
+                        <div class="contact__form-group">
+                            <label for="name" class="contact__form-label">Your Name</label>
+                            <input type="text" id="name" name="name" class="contact__form-input" required>
+                        </div>
+
+                        <div class="contact__form-group">
+                            <label for="email" class="contact__form-label">Your Email</label>
+                            <input type="email" id="email" name="email" class="contact__form-input" required>
+                        </div>
+
+                        <div class="contact__form-group">
+                            <label for="message" class="contact__form-label">Your Message</label>
+                            <textarea id="message" name="message" class="contact__form-textarea" rows="6" required></textarea>
+                        </div>
+
+                        <button type="submit" class="contact__form-button btn">
+                            <i class="fas fa-paper-plane"></i>
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 Benard Boiwo. Built with HTML, CSS, and JavaScript.</p>
+        <div class="footer__container container">
+            <div class="footer__content">
+                <div class="footer__info">
+                    <h3 class="footer__title">Lilian Cherono</h3>
+                    <p class="footer__subtitle">Software Developer</p>
+                </div>
+
+                <div class="footer__social">
+                    <a href="https://linkedin.com/in/liliancherono" class="footer__social-link" target="_blank">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://wa.me/1234567890" class="footer__social-link" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="https://facebook.com/liliancherono" class="footer__social-link" target="_blank">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer__copy">
+                <p>&copy; 2025 Lilian Cherono. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 
-    <script src="particles.js"></script>
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="back-to-top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
     <script src="script.js"></script>
 </body>
 </html>
