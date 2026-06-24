@@ -266,7 +266,7 @@ function showNotification(message, type = 'info') {
         removeNotification(notification);
     }, 5000);
     
-    // Manual close
+
     const closeBtn = notification.querySelector('.notification__close');
     closeBtn.addEventListener('click', () => {
         clearTimeout(autoRemove);
@@ -282,8 +282,6 @@ function removeNotification(notification) {
         }
     }, 300);
 }
-
-/*=============== BACK TO TOP BUTTON ===============*/
 const backToTopBtn = document.getElementById('back-to-top');
 
 const scrollTop = () => {
@@ -303,7 +301,7 @@ backToTopBtn.addEventListener('click', () => {
     });
 });
 
-/*=============== TYPING ANIMATION ===============*/
+
 function typeWriter(element, text, speed = 100) {
     let i = 0;
     element.innerHTML = '';
@@ -318,7 +316,7 @@ function typeWriter(element, text, speed = 100) {
     typing();
 }
 
-// Initialize typing animation when hero section is visible
+
 const heroObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -364,7 +362,7 @@ window.addEventListener('scroll', throttle(scrollHeader, 10));
 window.addEventListener('scroll', throttle(scrollActive, 10));
 window.addEventListener('scroll', throttle(scrollTop, 10));
 
-/*=============== LAZY LOADING FOR IMAGES ===============*/
+
 document.addEventListener('DOMContentLoaded', function() {
     const images = document.querySelectorAll('img[data-src]');
     
@@ -383,7 +381,7 @@ document.addEventListener('DOMContentLoaded', function() {
     images.forEach(img => imageObserver.observe(img));
 });
 
-/*=============== PRELOADER (Optional) ===============*/
+
 window.addEventListener('load', function() {
     const preloader = document.querySelector('.preloader');
     if (preloader) {
@@ -394,7 +392,7 @@ window.addEventListener('load', function() {
     }
 });
 
-/*=============== EASTER EGG: KONAMI CODE ===============*/
+
 let konamiCode = [];
 const konamiSequence = [
     'ArrowUp', 'ArrowUp', 
@@ -415,7 +413,7 @@ document.addEventListener('keydown', function(e) {
         showNotification('🎉 Konami Code activated! You found the easter egg!', 'success');
         konamiCode = [];
         
-        // Add some fun animation
+        
         document.body.style.animation = 'rainbow 2s infinite';
         setTimeout(() => {
             document.body.style.animation = '';
@@ -423,7 +421,7 @@ document.addEventListener('keydown', function(e) {
     }
 });
 
-// Rainbow animation for easter egg
+
 const rainbowStyles = `
 @keyframes rainbow {
     0% { filter: hue-rotate(0deg); }
