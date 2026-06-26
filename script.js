@@ -196,7 +196,7 @@ function showNotification(message, type = 'info') {
                 transition: transform 0.3s ease;
                 z-index: 1000;
                 max-width: 400px;
-                border-left: 4px solid #10b981;
+                border-left: 4px solid #4010b9ff;
             }
             
             .notification--success {
