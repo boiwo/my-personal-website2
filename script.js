@@ -255,13 +255,13 @@ function showNotification(message, type = 'info') {
         document.head.appendChild(styles);
     }
     
-    // Add to DOM
+
     document.body.appendChild(notification);
     
-    // Show notification
+
     setTimeout(() => notification.classList.add('show'), 100);
     
-    // Auto remove after 5 seconds
+    
     const autoRemove = setTimeout(() => {
         removeNotification(notification);
     }, 5000);
@@ -315,7 +315,8 @@ function typeWriter(element, text, speed = 100) {
     }
     typing();
 }
-
+/*=============== PERFORMANCE OPTIMIZATIONS ===============*/
+// Throttle function for scroll events
 
 const heroObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -334,7 +335,7 @@ if (heroSection) {
     heroObserver.observe(heroSection);
 }
 
-/*=============== DYNAMIC YEAR IN FOOTER ===============*/
+
 document.addEventListener('DOMContentLoaded', function() {
     const currentYear = new Date().getFullYear();
     const copyrightText = document.querySelector('.footer__copy p');
@@ -343,8 +344,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-/*=============== PERFORMANCE OPTIMIZATIONS ===============*/
-// Throttle function for scroll events
+
 function throttle(func, wait) {
     let timeout;
     return function executedFunction(...args) {
@@ -357,7 +357,7 @@ function throttle(func, wait) {
     };
 }
 
-// Apply throttling to scroll events
+
 window.addEventListener('scroll', throttle(scrollHeader, 10));
 window.addEventListener('scroll', throttle(scrollActive, 10));
 window.addEventListener('scroll', throttle(scrollTop, 10));
